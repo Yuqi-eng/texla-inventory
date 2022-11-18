@@ -61,7 +61,7 @@ def computeCost(m,A,S,C,F):
                     k+=1
 
                 if j==lo[i-1]:
-                    newcost -= F
+                    newcost = -F+C*A[i]*(i-lo[i-1])
 
                 if COST[i-1]+newcost+F < COST[i]:
                     COST[i] = COST[i-1]+newcost+F
@@ -89,7 +89,6 @@ def planPurchases(A):
         i-=1
         if (lo[i] != lo[next]):
             next = lo[i]
-    print(lo)
     return plan
  
 #def planPurchases(A):
